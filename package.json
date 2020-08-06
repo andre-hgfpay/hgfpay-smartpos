@@ -1,0 +1,101 @@
+{
+  "name": "hgfpay-smartpos",
+  "productName": "hgfpay-smartpos",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "dist/index.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "tsc && electron-forge start --enable-logging",
+    "build:win": "tsc && electron-builder build --win --ia32 --publish never",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
+  },
+  "keywords": [],
+  "author": {
+    "name": "André Soares",
+    "email": "andreg.soares@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andre-hgfpay/hgfpay-smartpos.git"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "andre-hgfpay",
+              "name": "hgfpay-smartpos"
+            },
+            "prerelease": true,
+            "authToken": "7c04b62fc017c9a9f16d9985377f30d0acf4cf55"
+          }
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.51",
+    "@electron-forge/maker-deb": "6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.51",
+    "@electron-forge/maker-zip": "6.0.0-beta.51",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "electron": "9.1.2",
+    "electron-builder": "^22.8.0",
+    "electron-wix-msi": "^2.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "typescript": "^3.7.0"
+  },
+  "dependencies": {
+    "@electron/typescript-definitions": "^8.6.4",
+    "@nestjs/common": "^7.4.2",
+    "@nestjs/config": "^0.5.0",
+    "@nestjs/core": "^7.4.2",
+    "@nestjs/platform-express": "^7.4.2",
+    "@nestjs/sequelize": "^0.1.0",
+    "@nestjs/swagger": "^4.5.12",
+    "@types/bluebird": "^3.5.32",
+    "@types/node": "12",
+    "@types/validator": "^13.1.0",
+    "cpf-cnpj-validator": "^1.0.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "mysql2": "^2.1.0",
+    "node-localstorage": "^2.1.6",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "readline": "^1.3.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.0",
+    "sequelize": "5.22.1",
+    "sequelize-typescript": "^1.1.0",
+    "swagger-ui-express": "^4.1.4",
+    "util": "^0.12.3"
+  }
+}

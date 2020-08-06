@@ -1,0 +1,10 @@
+appId: br.com.hgfpay.app.local
+productName: 'HGFPAY SmartPOS'
+publish:
+  provider: s3
+  bucket: hgfpay-exe
+  region: us-east-1
+
+win:
+  artifactName: ${name}-${version}-windows-${arch}.${ext}
+  icon: src/assets/icons/win/icon.png

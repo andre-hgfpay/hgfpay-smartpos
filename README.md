@@ -1,0 +1,1 @@
+# hgfpay-smartpos
